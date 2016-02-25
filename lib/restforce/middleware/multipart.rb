@@ -46,6 +46,9 @@ module Restforce
 
       # Files
       params.each do |k, v|
+        logger.info "faraday"
+        logger.info v
+        logger.info k
         parts << Faraday::Parts::Part.new(boundary,
                                           k.to_s,
                                           v) if v.respond_to? :content_type

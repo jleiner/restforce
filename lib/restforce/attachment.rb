@@ -8,7 +8,7 @@ module Restforce
     #   File.open(attachment.Name, 'wb') { |f| f.write(attachment.Body) }
     def Body
       ensure_id && ensure_body
-      @client.get(super).body.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+      @client.get(super).body
     end
 
     private
